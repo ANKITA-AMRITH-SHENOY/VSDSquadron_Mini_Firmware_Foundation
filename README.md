@@ -30,11 +30,10 @@ gpio_read()
 These function declarations in `gpio.h` form the API.
 
 The API tells:
--What functions are available
 
--What parameters they take
-
--What they return
+1. What functions are available
+2. What parameters they take
+3. What they return
 
 **Note:API is part of the firmware library, but not the whole thing.**
 
