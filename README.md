@@ -88,6 +88,8 @@ The API tells:
 - This structure reflects how **real embedded systems organize firmware** using drivers and APIs.
 - The lab helps understand the **basic working of GPIO and firmware design flow**.
 
+---
+
 ## Program Output
 
 ![GPIO BEHAVIOUR -1st run and build](https://github.com/user-attachments/assets/60cb740d-ea43-4a46-bd1e-e4ab7331c743)
