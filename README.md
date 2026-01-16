@@ -1,129 +1,15 @@
-# VSDSquadron Mini Firmware Foundation (Task 1)
+## RISC-V Internship – Firmware & Hardware Exploration
 
-## **What is a Firmware Library?**
+This repository documents my internship work focused on RISC-V architecture, where I am learning and implementing concepts related to processor fundamentals, embedded firmware, and low-level system design.
 
-A firmware library is a collection of code (functions + source files) that runs on or simulates embedded hardware such as `gpio.c` ,` gpio.h`.
+As part of this internship, I am gaining hands-on experience with:
 
-This is a firmware library because:
-1. It contains implementations ```gpio.c```
-2. It interacts with (or simulates) hardware
-3. It is used by application code ```main.c```
+1. Understanding the RISC-V ISA and instruction formats
+2. Writing and analyzing bare-metal firmware
+3. Working with GPIO, registers, and memory-mapped I/O
+4. Exploring how firmware libraries and APIs simplify hardware interaction
+5. Using tools like simulators, compilers, and development boards
 
-<img width="839" height="357" alt="image" src="https://github.com/user-attachments/assets/3f0e1e23-b31e-4802-95b7-83cc6dd1a661" />
+The goal of this repository is to track my learning journey, experiments, and tasks completed during the internship, while building a strong foundation in open-source processor architecture and embedded systems.
 
-
-Example:
-```
-void gpio_init(int pin, int direction);
-void gpio_write(int pin, int value);
-int gpio_read(int pin);
-```
-
----
-
-## **What is an API?**
-
-An API (Application Programming Interface) is the interface — the functions that are exposed for others to use. Such as:
-```
-gpio_init()
-gpio_write()
-gpio_read()
-```
-
-These function declarations in `gpio.h` form the API.
-
-The API tells:
-
-1. What functions are available
-2. What parameters they take
-3. What they return
-
-**Note:API is part of the firmware library, but not the whole thing.**
-
----
-
-## Embedded System: Without API vs With API
-
-### <ins>Without API</ins>
-
-Application Code
-
-↓
-
-Direct Hardware Register Access
-
-↓
-
-Hardware (GPIO Pins)
-
-### <ins>With API</ins>
-
-Application Code (main.c)
-
-↓
-
-API / Driver Functions (gpio.h / gpio.c)
-
-↓
-
-Hardware (GPIO Pins)
-
----
-
-## GPIO Function Overview
-
-| Function        | Meaning                          |
-|-----------------|----------------------------------|
-| `gpio_init()`   | Decide switch type (input/output)|
-| `gpio_write()`  | Turn switch ON or OFF            |
-| `gpio_read()`   | Check if switch is ON or OFF     |
-
----
-
-## Why APIs are important in Embedded Systems?
-
-1. **Hardware abstraction** – APIs hide low-level register details and simplify hardware access.
-2. **Code reusability** – Same API can be reused across multiple projects and platforms.
-3. **Faster development** – Developers can use ready-made functions instead of writing low-level code.
-4. **Improved portability** – Application code can run on different hardware with minimal changes.
-5. **Easier maintenance** – Changes in hardware affect only the API, not the entire application code.
-
----
-
-## GPIO behaviour code:
-
-`gpio.c`
-
-![GPIO-C](https://github.com/user-attachments/assets/ba88f1ed-fddc-4aa8-9c29-22891e598392)
-
-`gpio.h`
-
-![GPIO-H](https://github.com/user-attachments/assets/f66083b5-4f27-4370-b774-59348e74832f)
-
-`main.c`
-
-![GPIO- MAIN](https://github.com/user-attachments/assets/395728cf-8482-44f0-be44-ea943d5131b0)
-
----
-
-## Conclusion from the Lab Code
-
-- The lab code is a **simulation of GPIO firmware**, not real hardware control.
-- `gpio.h` acts as an **interface file**, containing function declarations and GPIO direction macros.
-- `gpio.c` contains the **implementation of GPIO functions**, simulating hardware behavior using `printf()`.
-- `gpio_init()` is used to **configure a GPIO pin** as either INPUT or OUTPUT.
-- `gpio_write()` simulates **writing a value (HIGH/LOW)** to an output GPIO pin.
-- `gpio_read()` simulates **reading the value** from an input GPIO pin.
-- `main.c` represents the **application layer**, which uses GPIO APIs without knowing internal details.
-- The code demonstrates **API abstraction**, where application code is separated from hardware logic.
-- This structure reflects how **real embedded systems organize firmware** using drivers and APIs.
-- The lab helps understand the **basic working of GPIO and firmware design flow**.
-
----
-
-## Program Output
-
-![GPIO BEHAVIOUR -1st run and build](https://github.com/user-attachments/assets/60cb740d-ea43-4a46-bd1e-e4ab7331c743)
-
-
-
+_This repository is intended for educational and learning purposes as part of my internship._
