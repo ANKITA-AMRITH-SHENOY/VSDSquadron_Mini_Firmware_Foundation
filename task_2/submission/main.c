@@ -1,38 +1,45 @@
-// main.c - Updated to demonstrate all required functions
+#include <stdint.h>
+#include <stdio.h>
 #include "ch32v00x.h"
-#include "gpio.h"
-#include "uart.h"
+#include "debug.h"
 
-void delay_ms(uint32_t ms) {
-    uint32_t i, j;
-    for (i = 0; i < ms; i++)
-        for (j = 0; j < 6000; j++);  // Calibrated for ~24MHz CH32V003
+/* Simple delay */
+void delay_ms(uint32_t ms)
+{
+    for (volatile uint32_t i = 0; i < ms * 4000; i++);
 }
 
-int main(void) {
+int main(void)
+{
+    /* System init */
+    NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
     SystemCoreClockUpdate();
-    
-    gpio_init();
-    uart_init(115200);
-    
-    uart_send_string("GPIO Demo - set/clear/toggle cycle\r\n");
-    
-    int state = 0;
-    while (1) {
-        if (state == 0) {
-            gpio_set(6);  // gpio_set(LED_PIN)
-            uart_send_string("LED SET (ON)\r\n");
-        } else if (state == 1) {
-            gpio_clear(6);  // gpio_clear(LED_PIN)
-            uart_send_string("LED CLEAR (OFF)\r\n");
-        } else {
-            gpio_toggle(6);  // gpio_toggle(LED_PIN)
-            uart_send_string("LED TOGGLE\r\n");
-            state = -1;  // Reset cycle
-        }
-        state++;
+    Delay_Init();
+
+    /* Enable GPIOD clock */
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+
+    /* LED on PD6 */
+    GPIO_InitTypeDef GPIO_InitStructure = {0};
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
+    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+    GPIO_Init(GPIOD, &GPIO_InitStructure);
+
+    /* UART init (USART on PD5 TX, PD6 RX) */
+    USART_Printf_Init(115200);
+
+    printf("\r\nVSDSquadron Mini UART :\r\n");
+
+    while (1)
+    {
+        GPIO_WriteBit(GPIOD, GPIO_Pin_6, Bit_SET);
+        printf("LED ON !\r\n");
+        delay_ms(1000);
+
+        GPIO_WriteBit(GPIOD, GPIO_Pin_6, Bit_RESET);
+        printf("LED OFF !\r\n");
         delay_ms(1000);
     }
-    
-    return 0;
 }
+
