@@ -4,6 +4,11 @@
 This task focuses on bringing up the VSDSquadron Mini RISC-V development board and validating basic hardware–software interaction. The firmware demonstrates successful board boot, UART communication, and GPIO control using a structured and beginner-friendly firmware design.
 
 The implementation follows a layered approach, where GPIO functionality is abstracted into separate source files, similar to real-world embedded firmware practices.
+- `main.c` contains the main application logic.
+- `gpio.c` and `gpio.h` implement GPIO abstraction functions.
+- `uart.c` and `uart.h` handle UART initialization and transmission.
+
+This structure improves readability and reflects standard embedded firmware design practices.
 
 ---
 
@@ -63,13 +68,6 @@ The pin activity was verified using a visible LED indication on the physical boa
 
 ### Verification of Correct Behavior
 Correct behavior was verified by observing real hardware outputs. After flashing the firmware, UART messages were continuously printed on the serial monitor, confirming successful board boot and UART communication. The selected GPIO pin toggled periodically, which was verified using a visible LED indication on the physical board. These observations confirm correct GPIO configuration and proper hardware–software interaction.
-
-
-- `main.c` contains the main application logic.
-- `gpio.c` and `gpio.h` implement GPIO abstraction functions.
-- `uart.c` and `uart.h` handle UART initialization and transmission.
-
-This structure improves readability and reflects standard embedded firmware design practices.
 
 ---
 
