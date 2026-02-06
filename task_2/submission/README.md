@@ -61,6 +61,10 @@ The pin activity was verified using a visible LED indication on the physical boa
 
 ---
 
+### Verification of Correct Behavior
+Correct behavior was verified by observing real hardware outputs. After flashing the firmware, UART messages were continuously printed on the serial monitor, confirming successful board boot and UART communication. The selected GPIO pin toggled periodically, which was verified using a visible LED indication on the physical board. These observations confirm correct GPIO configuration and proper hardware–software interaction.
+
+
 - `main.c` contains the main application logic.
 - `gpio.c` and `gpio.h` implement GPIO abstraction functions.
 - `uart.c` and `uart.h` handle UART initialization and transmission.
