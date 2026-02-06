@@ -16,7 +16,17 @@ The implementation follows a layered approach, where GPIO functionality is abstr
 ---
 
 ### UART Validation
-UART is used as the primary debugging interface.
+UART is used as the primary debug interface. After resetting the board, the firmware prints a startup message identifying the board, followed by periodic status messages. These messages confirm that the firmware is running correctly and that UART communication is functioning as expected. More than 10 consecutive readable messages are observed on the serial terminal.
+
+---
+
+### Build and Flash Steps
+1. Open the project folder in **Visual Studio Code**.
+2. Connect the VSDSquadron Mini board to the system using a USB cable.
+3. Build the firmware using the build option in VS Code.
+4. Upload (flash) the compiled firmware to the board using the upload option in VS Code.
+5. Open the serial monitor in VS Code with a baud rate of **115200**.
+6. Reset the board and observe the UART output on the serial monitor.
 
 **UART configuration:**
 - Peripheral: USART1
@@ -43,7 +53,8 @@ A GPIO pin was selected from Port D and configured as an output to validate hard
 - Firmware GPIO definition: **LED_PIN = 6**
 - Pin direction: **Output (Push-Pull)**
 
-The pin was toggled periodically in firmware to demonstrate correct GPIO initialization and control. The GPIO number used in firmware matches the datasheet-defined pin mapping for the VSDSquadron Mini board.
+The pin was toggled periodically in firmware to demonstrate correct GPIO initialization and control. The GPIO number used in firmware matches the datasheet-defined pin mapping for the VSDSquadron Mini board.This pin was chosen because it is easily accessible on the board and allows clear verification of GPIO behavior through LED toggling or signal observation.
+
 
 The GPIO pin was configured as an output and toggled periodically in the firmware. The GPIO number used in the code directly matches the datasheet-defined pin mapping of the VSDSquadron Mini board.
 
