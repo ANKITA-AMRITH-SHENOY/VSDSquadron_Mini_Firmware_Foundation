@@ -1,4 +1,4 @@
-# VSDSquadron Mini Firmware Foundation (Task 1)
+# Task 1:VSDSquadron Mini Firmware Foundations & Environment Setup
 
 ## **What is a Firmware Library?**
 
