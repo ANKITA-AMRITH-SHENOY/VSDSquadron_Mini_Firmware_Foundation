@@ -1,5 +1,4 @@
-# VSDSquadron Mini – Task 2  
-## Board Bring-Up, GPIO and UART Validation
+# Task 2 - VSDSquadron Mini Board Bring-Up, GPIO & UART Validation
 
 ### Overview
 This task focuses on bringing up the VSDSquadron Mini RISC-V development board and validating basic hardware–software interaction. The firmware demonstrates successful board boot, UART communication, and GPIO control using a structured and beginner-friendly firmware design.
