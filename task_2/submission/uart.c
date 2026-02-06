@@ -1,4 +1,3 @@
-// uart.c (unchanged)
 #include "uart.h"
 
 void uart_init(uint32_t baudrate) {
