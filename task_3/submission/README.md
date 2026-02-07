@@ -2,7 +2,7 @@
 
 ## Overview
 
-This task focuses on developing a **Timer peripheral driver library** and demonstrating its usage through a simple application. The timer is implemented as a **software-based millisecond timer**, designed to be simple, portable, and suitable for a third-year undergraduate internship level. The application periodically generates timestamps using the timer and displays them over UART.
+This task focuses on developing a **Timer peripheral driver library** and demonstrating its usage through a simple application. The timer is implemented as a **software-based millisecond timer**, designed to be simple and portable.The application periodically generates timestamps using the timer and displays them over UART.
 
 The main objective is to show **clean driver–application separation**, correct API design, and successful integration on the target MCU.
 
