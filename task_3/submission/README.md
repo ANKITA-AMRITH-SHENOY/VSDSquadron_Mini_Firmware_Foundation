@@ -88,7 +88,7 @@ Each message represents the elapsed time in milliseconds, obtained from the time
 
 ## How Correct Behavior Was Verified
 
-* The timer functionality was verified by observing **incrementing timestamps** printed at regular 1-second intervals over UART
+* The timer functionality was verified by observing **incrementing timestamps** printed at regular 1-second (1000ms) intervals over UART
 * The millisecond counter increases consistently, confirming correct delay and time tracking
 * The application uses only the public timer APIs, validating proper driver abstraction
 * Additional verification was done using the debugger by observing the timer tick variable during execution
