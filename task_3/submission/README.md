@@ -67,7 +67,7 @@ Each message represents the elapsed time in milliseconds, obtained from the time
 
 1. Open the project in **VS Code with PlatformIO installed**
 2. Ensure the correct environment is selected (same as Task-2 framework)
-3. Connect the CH32V003 board via WCH-Link
+3. Connect the VSDSquadron mini board via WCH-Link
 4. Build the project:
 
    ```
