@@ -43,8 +43,8 @@ The main objective is to show **clean driver–application separation**, correct
 
 * **UART Peripheral:** USART1
 * **Baud Rate:** 9600 bps
-* **TX Pin:** PD5
-* **RX Pin:** Not used (printing only).PD6 is configured as GPIO for LED, UART RX not enabled.
+* **TX Pin:** PD5 (Port D)
+* **RX Pin:** Not used (printing only).PD6 is configured as GPIO for LED, UART RX not enabled.(Port D)
 
 ### UART Message Format
 
