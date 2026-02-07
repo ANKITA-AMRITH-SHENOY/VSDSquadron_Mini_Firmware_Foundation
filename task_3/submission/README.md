@@ -1,4 +1,4 @@
-# Task-3: Peripheral Driver Library Development – Timer
+# Task-3 - Peripheral Driver Library Development (Timer) + Application Demo
 
 ## Overview
 
