@@ -35,7 +35,7 @@ The main objective is to show **clean driver–application separation**, correct
 | --- | ---------- | ---------------------------------------------------------------- |
 | PD6 | LED Output | Used as a simple visual indicator during development and testing |
 
-> **Note:** GPIO is used only as a supporting peripheral for demonstration and is not part of the core Task-3 requirement.
+> **Note:** GPIO is used only as a supporting peripheral for demonstration and is not part of the core Task-3.
 
 ---
 
