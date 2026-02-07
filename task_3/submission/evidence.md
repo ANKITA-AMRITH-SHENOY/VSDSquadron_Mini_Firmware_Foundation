@@ -1,10 +1,12 @@
 # UART Evidence
+
 ![output](https://github.com/user-attachments/assets/927f4ab5-9d1d-4a09-b83b-0283523dfc46)
 
 ---
 
 # Hardware Evidence
 
+https://github.com/user-attachments/assets/89e7aea5-8198-4b84-a3d5-03b5cb6a374e
 
 ---
 
