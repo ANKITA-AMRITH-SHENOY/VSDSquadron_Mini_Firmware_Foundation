@@ -1,6 +1,6 @@
-# Project Name
+# Project Name:
 
-**UART Controlled Mode Machine using CH32 (GPIO, Timer, PWM)**
+**UART Controlled Mode Machine**
 
 ---
 
