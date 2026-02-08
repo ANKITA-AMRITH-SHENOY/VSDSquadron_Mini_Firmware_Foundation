@@ -1,6 +1,4 @@
-# Project Name:**UART Controlled Mode Machine**
-
----
+# Project Name : **UART Controlled Mode Machine**
 
 ## Project Description
 
