@@ -41,7 +41,7 @@ This project implements a UART-controlled mode machine on a CH32 microcontroller
 
 1. Open the project folder in **VS Code**
 2. Ensure **PlatformIO** extension is installed
-3. Connect the CH32 board via USB
+3. Connect the VSDSquadron mini board via USB
 4. Select the correct environment (e.g., `vsdsquadronMini`)
 5. Build the project:
 PlatformIO: Build
