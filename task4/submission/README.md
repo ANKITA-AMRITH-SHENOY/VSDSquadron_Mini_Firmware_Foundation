@@ -65,7 +65,7 @@ PlatformIO: Monitor
 
 ---
 
-## How to Demo (Exact Commands)
+## Mode Commands
 
 | Command | Description |
 |------|------------|
