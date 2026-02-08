@@ -61,7 +61,7 @@ PlatformIO: Monitor
 - **Data bits:** 8  
 - **Parity:** None  
 - **Stop bits:** 1  
-- **Port:** CH32 USB-UART (COMx / ttyUSBx depending on OS)
+- **Port:** CH32 USB-UART
 
 ---
 
