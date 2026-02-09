@@ -7,7 +7,9 @@
 ---
 
 # Hardware Proof
+![pic](https://github.com/user-attachments/assets/bb2c1703-947c-41ea-9405-af3baa36925b)
 
+https://github.com/user-attachments/assets/a4c2c00c-8fd0-49ab-8aa6-bd89410bc3f1
 
 ---
 
