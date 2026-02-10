@@ -99,7 +99,7 @@ void pwm_init(void)
 ```
 void pwm_set_duty(uint8_t duty_percent)
 ```
-```
+```c
 /**
  * @brief Set PWM duty cycle
  * @param duty_percent Duty cycle 0-100 (0%=off, 100%=full on)
