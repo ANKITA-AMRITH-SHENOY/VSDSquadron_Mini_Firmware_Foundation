@@ -68,7 +68,7 @@ Current mode: 6
 >
 ```
 
-4. Expected Hardware Behavior
+# 4. Expected Hardware Behavior
 ```
 m1: LED solid bright ────────
 m2: LED blink ╔═══════╗═══════ (500ms ON, 500ms OFF)
@@ -78,7 +78,7 @@ m5: LED pattern ╔═╗═╗═╗═╗═╗═╗═╗ (200ms pattern)
 m6: Game → random delay → LED ON → press key → measure ms
 ```
 
-6. Troubleshooting
+# 5. Troubleshooting
 
 No response? → Check 115200 baud
 
