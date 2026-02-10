@@ -255,7 +255,7 @@ char uart_receive_char(void)
 ```
 uint8_t uart_char_available(void)
 ```
-```
+```c
 /**
  * @brief Check if receive data available (non-blocking)
  * @param None
