@@ -3,7 +3,7 @@ Connect CH32V00x dev board via USB. PC6 = onboard LED, PD5/PD6 = UART.
 
 ## Steps:
 
-1. Flash Firmware (2 min)
+# 1. Flash Firmware (2 min)
 PlatformIO (Recommended):
 
 # Platformio.ini:
@@ -26,14 +26,14 @@ pio device monitor
 ```
 or just click Build and Upload.
 
-2. UART Terminal Setup
+# 2. UART Terminal Setup
 Tool: PuTTY / PlatformIO Monitor / Arduino Serial
 
 Port: COMx / /dev/ttyUSBx (115200 baud auto-detected)
 
 Settings: 115200 baud, 8N1, No flow control
 
-3. Exact Demo Sequence
+# 3. Exact Demo Sequence
 ```
 > h                    # Show help
 Modes:
