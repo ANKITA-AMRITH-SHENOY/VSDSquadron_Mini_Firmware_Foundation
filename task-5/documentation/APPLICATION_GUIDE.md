@@ -1,4 +1,5 @@
-# The application runs a UART-controlled LED mode machine with 7 distinct operating modes, driven by a single main loop.
+# How the App Works?
+The application runs a UART-controlled LED mode machine with 7 distinct operating modes, driven by a single main loop.
 
 # 7 Application Modes
 Mode 0: LED completely OFF (pwm_set_duty(0))
