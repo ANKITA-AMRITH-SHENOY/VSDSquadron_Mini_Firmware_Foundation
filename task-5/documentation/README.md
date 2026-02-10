@@ -13,7 +13,7 @@ This project is a command-driven embedded firmware developed on the VSDSquadron 
 - PWM – LED brightness control  
 
 ## Folder Structure
-![f1](https://github.com/user-attachments/assets/b96c356a-b7f1-42af-9a5c-e52e92ba5ed3) ![f2](https://github.com/user-attachments/assets/a2ff9ec1-2bc7-473d-a833-37deb3fabda9)
+![f1](https://github.com/user-attachments/assets/b96c356a-b7f1-42af-9a5c-e52e92ba5ed3)   ![f2](https://github.com/user-attachments/assets/a2ff9ec1-2bc7-473d-a833-37deb3fabda9)
 
 ## Quick Start
 1. Build the firmware (PlatformIO)
