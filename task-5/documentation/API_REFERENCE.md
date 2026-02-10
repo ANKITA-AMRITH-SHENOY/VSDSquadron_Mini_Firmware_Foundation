@@ -3,8 +3,8 @@ The driver provides modular APIs for GPIO, PWM, Timer, and UART peripherals on C
 ​
 
 # GPIO API
-void gpio_init(void)
-text
+```c void gpio_init(void) ```
+```c
 /**
  * @brief Initialize GPIO for LED control on PC6
  * @param None
@@ -19,8 +19,11 @@ text
  * @example
  *   gpio_init();  // Ready for LED control
  */
+```
+```c
 void gpio_set_high(uint16_t pin)
-text
+```
+```c
 /**
  * @brief Set specified GPIO pin high
  * @param pin Pin mask (e.g., LED_PIN = GPIO_Pin_6)
@@ -34,8 +37,11 @@ text
  * @example
  *   gpio_set_high(LED_PIN);  // Turn LED on
  */
+```
+```c
 void gpio_set_low(uint16_t pin)
-text
+```
+```c
 /**
  * @brief Set specified GPIO pin low
  * @param pin Pin mask (e.g., LED_PIN = GPIO_Pin_6)
@@ -48,8 +54,11 @@ text
  * @example
  *   gpio_set_low(LED_PIN);  // Turn LED off
  */
+```
+```c
 void gpio_toggle(uint16_t pin)
-text
+```
+```c
 /**
  * @brief Toggle specified GPIO pin state
  * @param pin Pin mask (e.g., LED_PIN = GPIO_Pin_6)
@@ -63,9 +72,13 @@ text
  * @example
  *   gpio_toggle(LED_PIN);  // Blink LED
  */
-PWM API
+```
+
+# PWM API
+```c
 void pwm_init(void)
-text
+```
+```c
 /**
  * @brief Initialize software PWM on PC6 (~10kHz)
  * @param None
@@ -82,8 +95,11 @@ text
  *   pwm_init();           // Start PWM engine
  *   pwm_set_duty(50);     // 50% duty cycle
  */
+```
+```c
 void pwm_set_duty(uint8_t duty_percent)
-text
+```
+```
 /**
  * @brief Set PWM duty cycle
  * @param duty_percent Duty cycle 0-100 (0%=off, 100%=full on)
@@ -100,9 +116,13 @@ text
  *   pwm_set_duty(0);      // LED off
  *   pwm_set_duty(100);    // LED full on
  */
-Timer API
+```
+
+# Timer API
+```c
 void timer_init(uint32_t tick_hz)
-text
+```
+```c
 /**
  * @brief Initialize millisecond timer tick
  * @param tick_hz Desired tick frequency (e.g., 1000 = 1ms ticks)
@@ -118,8 +138,11 @@ text
  * @example
  *   timer_init(1000);     // 1ms resolution ticks
  */
+```
+```c
 void timer_delay_ms(uint32_t ms)
-text
+```
+```c
 /**
  * @brief Blocking delay in milliseconds
  * @param ms Milliseconds to delay
@@ -133,8 +156,11 @@ text
  * @example
  *   timer_delay_ms(500);  // Wait half second
  */
+```
+```c
 uint32_t timer_get_tick(void)
-text
+```
+```c
 /**
  * @brief Get current millisecond tick count
  * @param None
@@ -150,9 +176,13 @@ text
  *   // do work
  *   uint32_t elapsed = timer_get_tick() - start;
  */
-UART API
+```
+
+# UART API
+```
 void uart_init(uint32_t baud)
-text
+```
+```c
 /**
  * @brief Initialize UART1 (PD5-TX, PD6-RX)
  * @param baud Baud rate (e.g., 115200)
@@ -169,8 +199,11 @@ text
  *   uart_init(115200);
  *   uart_send_string("Hello\r\n");
  */
+```
+```
 void uart_send_char(char c)
-text
+```
+```c
 /**
  * @brief Send single character (blocking)
  * @param c Character to send
@@ -183,8 +216,11 @@ text
  * @example
  *   uart_send_char('A');
  */
+```
+```
 void uart_send_string(const char *s)
-text
+```
+```c
 /**
  * @brief Send null-terminated string (blocking)
  * @param s String pointer
@@ -197,8 +233,11 @@ text
  * @example
  *   uart_send_string("Status OK\r\n");
  */
+```
+```
 char uart_receive_char(void)
-text
+```
+```c
 /**
  * @brief Blocking receive single character
  * @param None
@@ -212,8 +251,11 @@ text
  * @example
  *   char c = uart_receive_char();
  */
+```
+```
 uint8_t uart_char_available(void)
-text
+```
+```
 /**
  * @brief Check if receive data available (non-blocking)
  * @param None
@@ -228,4 +270,4 @@ text
  *       char c = uart_receive_char();
  *   }
  */
-
+```
