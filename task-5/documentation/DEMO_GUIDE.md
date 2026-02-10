@@ -6,7 +6,7 @@ Connect VSDSquadron mini board via USB. PC6 = external LED, PD5/PD6 = UART.
 # 1. Flash Firmware (2 min)
 PlatformIO (Recommended):
 
-# Platformio.ini:
+## Platformio.ini:
 ```
 [env:vsdsquadronMini]
 platform = ch32v
