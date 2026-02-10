@@ -1,5 +1,5 @@
 # How to Run and Verify (5 Minutes)
-Connect VSDSquadron mini board via USB. PC6 = onboard LED, PD5/PD6 = UART.
+Connect VSDSquadron mini board via USB. PC6 = external LED, PD5/PD6 = UART.
 
 ## Steps:
 
