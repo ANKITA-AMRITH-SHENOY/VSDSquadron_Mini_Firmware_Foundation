@@ -3,7 +3,7 @@ The driver provides modular APIs for GPIO, PWM, Timer, and UART peripherals on C
 ​
 
 # GPIO API
-```c void gpio_init(void) ```
+``` void gpio_init(void) ```
 ```c
 /**
  * @brief Initialize GPIO for LED control on PC6
@@ -20,7 +20,7 @@ The driver provides modular APIs for GPIO, PWM, Timer, and UART peripherals on C
  *   gpio_init();  // Ready for LED control
  */
 ```
-```c
+```
 void gpio_set_high(uint16_t pin)
 ```
 ```c
@@ -38,7 +38,7 @@ void gpio_set_high(uint16_t pin)
  *   gpio_set_high(LED_PIN);  // Turn LED on
  */
 ```
-```c
+```
 void gpio_set_low(uint16_t pin)
 ```
 ```c
@@ -55,7 +55,7 @@ void gpio_set_low(uint16_t pin)
  *   gpio_set_low(LED_PIN);  // Turn LED off
  */
 ```
-```c
+```
 void gpio_toggle(uint16_t pin)
 ```
 ```c
@@ -75,7 +75,7 @@ void gpio_toggle(uint16_t pin)
 ```
 
 # PWM API
-```c
+```
 void pwm_init(void)
 ```
 ```c
@@ -96,7 +96,7 @@ void pwm_init(void)
  *   pwm_set_duty(50);     // 50% duty cycle
  */
 ```
-```c
+```
 void pwm_set_duty(uint8_t duty_percent)
 ```
 ```
@@ -119,7 +119,7 @@ void pwm_set_duty(uint8_t duty_percent)
 ```
 
 # Timer API
-```c
+```
 void timer_init(uint32_t tick_hz)
 ```
 ```c
@@ -139,7 +139,7 @@ void timer_init(uint32_t tick_hz)
  *   timer_init(1000);     // 1ms resolution ticks
  */
 ```
-```c
+```
 void timer_delay_ms(uint32_t ms)
 ```
 ```c
@@ -157,7 +157,7 @@ void timer_delay_ms(uint32_t ms)
  *   timer_delay_ms(500);  // Wait half second
  */
 ```
-```c
+```
 uint32_t timer_get_tick(void)
 ```
 ```c
