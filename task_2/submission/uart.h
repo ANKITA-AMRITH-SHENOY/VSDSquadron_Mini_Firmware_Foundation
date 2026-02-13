@@ -8,3 +8,4 @@ void uart_send_char(char ch);
 void uart_send_string(const char* str);
 
 #endif
+
