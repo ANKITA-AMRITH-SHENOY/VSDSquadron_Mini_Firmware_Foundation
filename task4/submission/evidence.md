@@ -1,15 +1,20 @@
 # UART logs
+![1](https://github.com/user-attachments/assets/50b53382-6ba1-4564-832e-d8fd794dc15b)
 
-![o1](https://github.com/user-attachments/assets/f437588f-754a-4c09-93b0-314b80f04894)
-![o2](https://github.com/user-attachments/assets/e9c68104-c507-428c-8bd9-02ca5db18a28)
-![o3](https://github.com/user-attachments/assets/6510c686-65f0-4fc4-8c7c-d59a76ec37e9)
+![2](https://github.com/user-attachments/assets/219220fe-741d-4366-8d97-e05f3ffea105)
+![3](https://github.com/user-attachments/assets/d255b1c4-c15f-4b27-a3ff-d40544567468)
+
+![4](https://github.com/user-attachments/assets/449236c9-4069-4f65-a7e4-2d78f4b1d163)
+![5](https://github.com/user-attachments/assets/082fd03f-3b69-459f-8364-5dbc3040cd37)
+
 
 ---
 
 # Hardware Proof
 ![pic](https://github.com/user-attachments/assets/bb2c1703-947c-41ea-9405-af3baa36925b)
 
-https://github.com/user-attachments/assets/a4c2c00c-8fd0-49ab-8aa6-bd89410bc3f1
+
+https://github.com/user-attachments/assets/65cfc312-03a4-4d0c-8ab6-221bf24be283
 
 ---
 
