@@ -1,7 +1,7 @@
 # Task 2 - VSDSquadron Mini Board Bring-Up, GPIO & UART Validation
 
 ### Overview
-This task focuses on bringing up the VSDSquadron Mini RISC-V development board and validating basic hardware–software interaction. The firmware demonstrates successful board boot, UART communication, and GPIO control using a structured and beginner-friendly firmware design.
+This task focuses on bringing up the VSDSquadron Mini RISC-V development board and validating basic hardware–software interaction. The firmware demonstrates successful board boot, UART communication, and GPIO control using a structured and beginner-friendly firmware design. This separation ensures clear abstraction between application logic and hardware drivers, following standard embedded firmware architecture principles.
 
 The implementation follows a layered approach, where GPIO functionality is abstracted into separate source files, similar to real-world embedded firmware practices.
 - `main.c` contains the main application logic.
@@ -32,11 +32,12 @@ UART is used as the primary debug interface. After resetting the board, the firm
 5. Open the serial monitor in VS Code with a baud rate of **115200**.
 6. Reset the board and observe the UART output on the serial monitor.
 
-**UART configuration:**
+## UART configuration:
+
 - Peripheral: USART1
 - Baud rate: 115200
 - TX Pin: PD5
-- RX Pin: PD6
+- RX Pin: Not used (TX-only configuration)
 
 **UART output includes:**
 - Board identification message
@@ -47,7 +48,8 @@ More than 10 consecutive UART messages were observed on the serial terminal, con
 ---
 
 ### GPIO Pin Mapping and Validation
-A GPIO pin was selected from Port D and configured as an output to validate hardware-level GPIO control on the VSDSquadron Mini board.
+A GPIO pin was selected from Port D and configured as an output to validate hardware-level GPIO control on the VSDSquadron Mini board. The LED toggling was also confirmed through continuous UART status messages ("LED ON", "LED OFF"), ensuring that both software execution and physical GPIO behavior were synchronized and functioning correctly.
+
 
 **GPIO Pin Details:**
 - Physical pin (board silkscreen): **PD6**
