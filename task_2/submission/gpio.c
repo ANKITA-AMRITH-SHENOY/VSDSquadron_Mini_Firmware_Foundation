@@ -1,4 +1,5 @@
 #include "gpio.h"
+
 void gpio_init(void)
 {
     GPIO_InitTypeDef GPIO_InitStructure = {0};
@@ -15,18 +16,10 @@ void gpio_init(void)
 
 void gpio_set(int pin)
 {
-    GPIO_SetBits(GPIOD, (1 << pin)); // LED OFF
+    GPIO_SetBits(GPIOD, (1 << pin));   // LED OFF
 }
 
 void gpio_clear(int pin)
 {
     GPIO_ResetBits(GPIOD, (1 << pin)); // LED ON
-}
-
-void gpio_toggle(int pin)
-{
-    if (GPIO_ReadOutputDataBit(GPIOD, (1 << pin)) == Bit_SET)
-        gpio_clear(pin);
-    else
-        gpio_set(pin);
 }
