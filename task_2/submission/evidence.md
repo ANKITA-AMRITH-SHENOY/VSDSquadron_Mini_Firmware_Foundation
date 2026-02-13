@@ -5,7 +5,7 @@
 
 # VIDEO
 
-https://github.com/user-attachments/assets/d8885ec0-3389-4816-9ff7-8e0d6b2c7845
+https://github.com/user-attachments/assets/05cf37b1-9c78-4d13-8d66-544160f04c74
 
 ---
 
