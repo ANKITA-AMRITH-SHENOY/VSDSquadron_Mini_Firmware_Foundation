@@ -1,9 +1,7 @@
-#include <stdint.h>
-#include <stdio.h>
-#include "ch32v00x.h"
+#include "gpio.h"
+#include "uart.h"
 #include "debug.h"
 
-/* Simple delay */
 void delay_ms(uint32_t ms)
 {
     for (volatile uint32_t i = 0; i < ms * 4000; i++);
@@ -11,35 +9,23 @@ void delay_ms(uint32_t ms)
 
 int main(void)
 {
-    /* System init */
     NVIC_PriorityGroupConfig(NVIC_PriorityGroup_1);
     SystemCoreClockUpdate();
     Delay_Init();
 
-    /* Enable GPIOD clock */
-    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD, ENABLE);
+    gpio_init();
+    uart_init(115200);
 
-    /* LED on PD6 */
-    GPIO_InitTypeDef GPIO_InitStructure = {0};
-    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
-    GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;
-    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-    GPIO_Init(GPIOD, &GPIO_InitStructure);
-
-    /* UART init (USART on PD5 TX, PD6 RX) */
-    USART_Printf_Init(115200);
-
-    printf("\r\nVSDSquadron Mini UART :\r\n");
+    uart_send_string("\r\nVSDSquadron Mini UART:\r\n");
 
     while (1)
     {
-        GPIO_WriteBit(GPIOD, GPIO_Pin_6, Bit_SET);
-        printf("LED ON !\r\n");
+        gpio_clear(LED_PIN);   // LED ON
+        uart_send_string("LED ON!\r\n");
         delay_ms(1000);
 
-        GPIO_WriteBit(GPIOD, GPIO_Pin_6, Bit_RESET);
-        printf("LED OFF !\r\n");
+        gpio_set(LED_PIN);     // LED OFF
+        uart_send_string("LED OFF!\r\n");
         delay_ms(1000);
     }
 }
-
