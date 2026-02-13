@@ -1,5 +1,5 @@
 # UART OUTPUT
-![output](https://github.com/user-attachments/assets/92bc7ea1-6bc1-4329-8230-5ff6fc36310a)
+![o1](https://github.com/user-attachments/assets/d0dc26ca-c498-4adf-bc20-962b114233b3)
 
 ---
 
