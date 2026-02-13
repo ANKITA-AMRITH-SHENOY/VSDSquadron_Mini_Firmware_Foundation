@@ -13,19 +13,19 @@ int main(void)
     SystemCoreClockUpdate();
     Delay_Init();
 
-    gpio_init();
+    led_init();
     uart_init(115200);
 
     uart_send_string("\r\nVSDSquadron Mini UART:\r\n");
 
     while (1)
     {
-        gpio_clear(LED_PIN);   // LED ON
-        uart_send_string("LED ON!\r\n");
+        led_on();                               // TURN ON FIRST
+        uart_send_string("LED ON\r\n");         // THEN PRINT
         delay_ms(1000);
 
-        gpio_set(LED_PIN);     // LED OFF
-        uart_send_string("LED OFF!\r\n");
+        led_off();                              // TURN OFF
+        uart_send_string("LED OFF\r\n");        // THEN PRINT
         delay_ms(1000);
     }
 }
