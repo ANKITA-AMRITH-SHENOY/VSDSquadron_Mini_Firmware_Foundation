@@ -90,9 +90,9 @@ The PWM signal was implemented using a software-based technique driven by the TI
 
 The duty cycle directly controls the percentage of time the LED remains ON within one PWM period.
 
--At 0% duty cycle, the LED remains OFF.
--At 50% duty cycle, the LED is ON for half of each PWM period, resulting in medium brightness.
--At 100% duty cycle, the LED remains fully ON.
+- At 0% duty cycle, the LED remains OFF.
+- At 50% duty cycle, the LED is ON for half of each PWM period, resulting in medium brightness.
+- At 100% duty cycle, the LED remains fully ON.
 
 As the duty cycle increases, the ON-time within each PWM period increases, causing the LED brightness to increase proportionally. Conversely, decreasing the duty cycle reduces the ON-time and decreases brightness.
 
