@@ -5,9 +5,9 @@
 
 #define LED_PIN 6   // PD6
 
-void gpio_init(void);
-void gpio_set(int pin);
-void gpio_clear(int pin);
+void led_init(void);
+void led_on(void);
+void led_off(void);
 
 #endif
 
