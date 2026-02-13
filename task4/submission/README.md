@@ -65,6 +65,38 @@ PlatformIO: Monitor
 
 ---
 
+## PWM Implementation Approach
+
+PWM was implemented using a software-based technique driven by the TIM2 update interrupt.
+
+<ins>Configuration Details:</ins>
+
+Timer Used: TIM2
+
+Mode: Update interrupt mode
+
+PWM Type: Software PWM
+
+Output Pin: PC6
+
+Port: GPIOC
+
+Pin Mode: Output Push-Pull
+
+Instead of using hardware timer output channels, PWM duty control was achieved by:
+
+Generating periodic interrupts using TIM2.
+
+Maintaining a software counter (0–99).
+
+Comparing the counter with duty value.
+
+Manually setting/resetting PC6 inside the interrupt handler.
+
+This creates a 0–100% duty cycle PWM signal fully controlled in firmware.
+
+---
+
 ## Mode Commands (How to Demonstrate)
 
 | Command | Description |
