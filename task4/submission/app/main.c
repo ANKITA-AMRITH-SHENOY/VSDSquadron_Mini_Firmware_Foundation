@@ -94,16 +94,29 @@ int main(void)
         }
 
         /* m4: Breathing PWM */
-        else if (mode == 4 && now - last > 20)
-        {
-            duty += dir * 2;
+     else if (mode == 4 && now - last > 20)
+{
+    static uint32_t print_timer = 0;
 
-            if (duty >= 98) { duty = 98; dir = -1; }
-            else if (duty <= 2) { duty = 2; dir = 1; }
+    duty += dir * 2;
 
-            pwm_set_duty(duty);
-            last = now;
-        }
+    if (duty >= 98) { duty = 98; dir = -1; }
+    else if (duty <= 2) { duty = 2; dir = 1; }
+
+    pwm_set_duty(duty);
+
+    /* Print only every 200 ms */
+    if (now - print_timer > 200)
+    {
+        char buf[25];
+        sprintf(buf, "Duty: %d%%\r\n", duty);
+        uart_send_string(buf);
+        print_timer = now;
+    }
+
+    last = now;
+}
+
 
         /* m5: Pattern mode */
         else if (mode == 5 && now - last > 200)
@@ -127,7 +140,6 @@ int main(void)
             {
                 uart_send_string("Get ready...\r\n");
 
-                /* random delay: 1–3 seconds */
                 timer_delay_ms(1000 + (timer_get_tick() % 2000));
 
                 pwm_set_duty(100);   // LED ON
@@ -138,17 +150,17 @@ int main(void)
             {
                 if (uart_char_available())
                 {
-                    uart_receive_char();   // clear input
-                    pwm_set_duty(0);       // LED OFF
+                    uart_receive_char();
+                    pwm_set_duty(0);
 
                     uint32_t reaction = timer_get_tick() - game_start;
 
-                    char buf[20];
+                    char buf[30];
                     sprintf(buf, "Reaction time: %lu ms\r\n", reaction);
                     uart_send_string(buf);
 
                     game_state = 0;
-                    mode = 0;   // back to OFF
+                    mode = 0;
                 }
             }
         }
@@ -184,7 +196,6 @@ void process_cmd(void)
             uart_send_char('0' + mode);
             uart_send_string("\r\n");
 
-            /* reset helpers */
             pattern_idx = 0;
             game_state = 0;
         }
@@ -200,5 +211,3 @@ void process_cmd(void)
         uart_send_string("Unknown command\r\n");
     }
 }
-
-
