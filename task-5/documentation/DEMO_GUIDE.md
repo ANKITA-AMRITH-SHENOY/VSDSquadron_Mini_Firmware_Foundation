@@ -90,3 +90,71 @@ Garbled UART? → Wrong baud rate or line endings
 
 *Reviewer Observation: Type m4, see smooth breathing on LED + UART feedback. Takes 90 seconds to verify all modes.*
 *(m0=LED OFF, m1=LED ON, m2=BLINK(500ms) , m3=FAST BLINK(100ms) , m4= BREATHE ,m5= PATTERN , m6= GAME)*
+
+---
+
+# PWM Hardware Verification
+## Implementation Method
+
+PWM was generated using the TIM2 update interrupt rather than hardware timer output channels.
+
+- TIM2 generates periodic update interrupts.
+- A software counter (0–99) runs inside the ISR.
+- The counter is compared with the duty cycle value.
+- GPIOC pin PC6 is manually set HIGH or LOW.
+- This produces a PWM waveform on PC6.
+
+This confirms PWM generation through interrupt-driven GPIO control.
+
+---
+
+# Pin Mapping Verification
+
+| Item        | Value            |
+| ----------- | ---------------- |
+| MCU         | CH32V003         |
+| Timer Used  | TIM2             |
+| PWM Type    | Software PWM     |
+| Output Port | GPIOC            |
+| Output Pin  | PC6              |
+| Pin Mode    | Output Push-Pull |
+
+PC6 was configured as a general-purpose output pin and toggled inside the TIM2 interrupt handler to generate PWM.
+
+This verifies correct pin configuration and mapping.
+
+---
+
+# Duty Cycle vs Brightness Validation
+
+During Mode 4 (Breathing Mode):
+
+- The duty cycle value was printed via UART.
+- The LED brightness visibly increased as duty increased.
+- The LED brightness visibly decreased as duty decreased.
+
+Example UART output:
+```
+Duty: 10%
+Duty: 25%
+Duty: 50%
+Duty: 75%
+```
+
+Observed behavior:
+
+- Low duty → Dim LED
+- Medium duty → Moderate brightness
+- High duty → Bright LED
+
+This confirms that changing duty cycle affects ON-time within a fixed PWM period and directly controls LED brightness.
+
+---
+
+# What Was Verified on Hardware?
+- Timer interrupt generation
+- Software PWM waveform creation
+- GPIOC PC6 output toggling
+- LED brightness variation with duty cycle
+- UART printing synchronized with PWM updates
+- All modes selectable without system reset
